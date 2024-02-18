@@ -10,9 +10,12 @@
 Controller - Service - Repository 계층에 익숙해져 봅시다! 👍
 
 ---
+
 **[문제1]**  
 과제 #4에서 만들었던 API를 강의 내용 처럼 Controller - Service - Repository로 분리해보세요
+
 ---
+
 **[문제2]**  
 문제 1에서 코드가 분리되면
 ``` FruitController ``` / ``` FruitService ``` / ``` FruitRepository ``` 가 생겼을 겁니다.    
