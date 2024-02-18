@@ -5,8 +5,10 @@
 기존에 작성했던 Controller 코드를 3단 분리해보았습니다.  
 앞으로 API를 개발할 때는 이 계층에 맞게 각 코드가 작성되어야 합니다! 🙂
 
+#####
 과제 #4 에서 만들었던 API를 분리해보며,  
 Controller - Service - Repository 계층에 익숙해져 봅시다! 👍
+
 ---
 **[문제1]**  
 과제 #4에서 만들었던 API를 강의 내용 처럼 Controller - Service - Repository로 분리해보세요
