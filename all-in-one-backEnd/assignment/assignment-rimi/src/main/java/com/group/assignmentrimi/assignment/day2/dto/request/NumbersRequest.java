@@ -1,5 +1,6 @@
-package com.group.assignmentrimi.assignment.day2.dto;
+package com.group.assignmentrimi.assignment.day2.dto.request;
 
+import com.group.assignmentrimi.assignment.day2.domain.Numbers;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +18,6 @@ import java.util.List;
 @AllArgsConstructor
 public class NumbersRequest {
 
-    private List<NumberDto> numbers = new ArrayList<>();
+    private List<Numbers> numbers = new ArrayList<>();
 
 }

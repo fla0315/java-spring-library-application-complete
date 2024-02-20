@@ -1,4 +1,4 @@
-package com.group.assignmentrimi.assignment.day2.dto;
+package com.group.assignmentrimi.assignment.day2.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class DayOfTheWeekResponse {
-
+    /** 요일 */
     private String dayOfTheWeek;
-
 }

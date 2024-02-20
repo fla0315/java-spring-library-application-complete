@@ -1,10 +1,10 @@
 package com.group.assignmentrimi.assignment.day2.controller;
 
 
-import com.group.assignmentrimi.assignment.day2.dto.CalculationNumberRequest;
-import com.group.assignmentrimi.assignment.day2.dto.CalculationNumberResponse;
-import com.group.assignmentrimi.assignment.day2.dto.DayOfTheWeekResponse;
-import com.group.assignmentrimi.assignment.day2.dto.NumbersRequest;
+import com.group.assignmentrimi.assignment.day2.dto.request.CalculationNumberRequest;
+import com.group.assignmentrimi.assignment.day2.dto.request.NumbersRequest;
+import com.group.assignmentrimi.assignment.day2.dto.response.CalculationNumberResponse;
+import com.group.assignmentrimi.assignment.day2.dto.response.DayOfTheWeekResponse;
 import com.group.assignmentrimi.assignment.day2.service.Day2Service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

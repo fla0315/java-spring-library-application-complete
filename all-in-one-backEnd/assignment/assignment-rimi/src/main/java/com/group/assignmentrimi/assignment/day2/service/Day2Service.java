@@ -1,10 +1,10 @@
 package com.group.assignmentrimi.assignment.day2.service;
 
-import com.group.assignmentrimi.assignment.day2.dto.CalculationNumberRequest;
-import com.group.assignmentrimi.assignment.day2.dto.CalculationNumberResponse;
-import com.group.assignmentrimi.assignment.day2.dto.DayOfTheWeekResponse;
-import com.group.assignmentrimi.assignment.day2.dto.NumberDto;
-import com.group.assignmentrimi.assignment.day2.dto.NumbersRequest;
+import com.group.assignmentrimi.assignment.day2.domain.Numbers;
+import com.group.assignmentrimi.assignment.day2.dto.request.CalculationNumberRequest;
+import com.group.assignmentrimi.assignment.day2.dto.request.NumbersRequest;
+import com.group.assignmentrimi.assignment.day2.dto.response.CalculationNumberResponse;
+import com.group.assignmentrimi.assignment.day2.dto.response.DayOfTheWeekResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,7 @@ public class Day2Service {
     public CalculationNumberResponse calculateNumber(CalculationNumberRequest request) {
 
         if (request.getNumber1() == null || request.getNumber2() == null) {
-            throw new NullPointerException("numbers is null");
+            throw new IllegalArgumentException("number is null");
         }
 
         long number1 = request.getNumber1();
@@ -45,7 +45,7 @@ public class Day2Service {
      */
     public DayOfTheWeekResponse getDayOfTheWeek(LocalDate date) {
         if (date == null) {
-            throw new NullPointerException("No value present");
+            throw new IllegalArgumentException("date is null");
         }
 
         return DayOfTheWeekResponse.builder()
@@ -63,7 +63,7 @@ public class Day2Service {
                 .map(NumbersRequest::getNumbers)
                 .orElseThrow(() -> new IllegalArgumentException("numbers is null"))
                 .stream()
-                .mapToLong(NumberDto::getNumber)
+                .mapToLong(Numbers::getNumber)
                 .sum();
     }
 }
