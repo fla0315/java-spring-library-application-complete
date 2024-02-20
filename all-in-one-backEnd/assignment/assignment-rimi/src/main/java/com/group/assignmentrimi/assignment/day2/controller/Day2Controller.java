@@ -39,6 +39,4 @@ public class Day2Controller {
     public Object calculateNumbers(@RequestBody NumbersRequest numbers) {
         return day2Service.calculateNumbers(numbers);
     }
-
-
 }

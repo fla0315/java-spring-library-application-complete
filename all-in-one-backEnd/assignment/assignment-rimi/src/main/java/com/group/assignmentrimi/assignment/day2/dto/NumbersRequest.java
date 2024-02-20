@@ -15,7 +15,6 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class NumbersRequest {
 
     private List<NumberDto> numbers = new ArrayList<>();
