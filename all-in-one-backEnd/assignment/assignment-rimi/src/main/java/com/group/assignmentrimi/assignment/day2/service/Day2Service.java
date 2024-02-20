@@ -44,6 +44,9 @@ public class Day2Service {
      * @return 요일
      */
     public DayOfTheWeekResponse getDayOfTheWeek(LocalDate date) {
+        if (date == null) {
+            throw new NullPointerException("No value present");
+        }
 
         return DayOfTheWeekResponse.builder()
                 .dayOfTheWeek(date.getDayOfWeek().getDisplayName(TextStyle.SHORT, Locale.ENGLISH).toUpperCase())
@@ -56,13 +59,7 @@ public class Day2Service {
      * @return 합계
      */
     public Object calculateNumbers(NumbersRequest numbers) {
-
-        var isEmpty = Optional.ofNullable(numbers.getNumberDto()).isPresent();
-        if (isEmpty) {
-            throw new NullPointerException("No value present");
-        }
-
-        return numbers.getNumberDto()
+        return numbers.getNumbers()
                 .stream()
                 .mapToLong(NumberDto::getNumber)
                 .sum();

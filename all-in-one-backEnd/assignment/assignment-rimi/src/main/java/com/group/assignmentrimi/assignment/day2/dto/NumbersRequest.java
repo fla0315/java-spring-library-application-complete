@@ -18,6 +18,6 @@ import java.util.List;
 @ToString
 public class NumbersRequest {
 
-    private List<NumberDto> numberDto = new ArrayList<>();
+    private List<NumberDto> numbers = new ArrayList<>();
 
 }
