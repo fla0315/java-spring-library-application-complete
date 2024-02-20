@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -24,11 +25,11 @@ public class Day2Service {
     public CalculationNumberResponse calculateNumber(CalculationNumberRequest request) {
 
         if (request.getNumber1() == null || request.getNumber2() == null) {
-            throw new NullPointerException("No value present");
+            throw new NullPointerException("numbers is null");
         }
 
-        var number1 = request.getNumber1();
-        var number2 = request.getNumber2();
+        long number1 = request.getNumber1();
+        long number2 = request.getNumber2();
 
         return CalculationNumberResponse.builder()
                 .add(Math.addExact(number1, number2))
@@ -58,7 +59,9 @@ public class Day2Service {
      * @return 합계
      */
     public Object calculateNumbers(NumbersRequest numbers) {
-        return numbers.getNumbers()
+        return Optional.ofNullable(numbers)
+                .map(NumbersRequest::getNumbers)
+                .orElseThrow(() -> new IllegalArgumentException("numbers is null"))
                 .stream()
                 .mapToLong(NumberDto::getNumber)
                 .sum();
