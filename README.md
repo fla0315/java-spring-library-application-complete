@@ -23,17 +23,18 @@
 14일차 - 마무리 및 추가 꿀팁 영상 
 ```
 #### 워밍업 클럽 - 과제
-```
-※ 일자별 과제
-1일차. [어노테이션](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day1)
-2일차. [API 개발](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day2)
-3일차. [익명 클래스 / 람다 / 함수형 프로그래밍 / @FunctionalInterface / 스트림 API / 메소드 레퍼런스](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day3)
-4일차. [API 개발2](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day4)
-5일차. [리팩토링을 통한 클린코드](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day5)
-6일차. [스프링 컨테이너](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day6)
-7일차. [JPA 사용](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day7)
 
-[※ 미니 프로젝트](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/mini-project-rimi/src/main/java/com/group/miniprojectrimi/mini)
+※ 일자별 과제  
+1일차. [어노테이션](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day1)  
+2일차. [API 개발](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day2)  
+3일차. [익명 클래스 / 람다 / 함수형 프로그래밍 / @FunctionalInterface / 스트림 API / 메소드 레퍼런스](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day3)  
+4일차. [API 개발2](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day4)  
+5일차. [리팩토링을 통한 클린코드](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day5)  
+6일차. [스프링 컨테이너](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day6)  
+7일차. [JPA 사용](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/assignment-rimi/src/main/java/com/group/assignmentrimi/assignment/day7)  
+
+[※ 미니 프로젝트](https://github.com/rimi-kim/study-all-in-one-backEnd/tree/main/all-in-one-backEnd/assignment/mini-project-rimi/src/main/java/com/group/miniprojectrimi/mini)  
+``` 
 주제 : 간단한 출퇴근 사내 시스템 구현
 기술스택 : java 17, Spring boot 3.2.2, JPA, MySQL
 기능 개발 :
