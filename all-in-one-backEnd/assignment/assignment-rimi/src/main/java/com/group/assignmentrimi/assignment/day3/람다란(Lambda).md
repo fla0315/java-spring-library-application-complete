@@ -73,10 +73,16 @@ Java 8부터 도입되었으며, 함수형 프로그래밍 지원합니다.
 ```
 
 ㄴ 출처 :
-[ChatGPT](https://chat.openai.com/)
-[자바의정석](https://cafe.naver.com/javachobostudy)  
-[Lambda-QuickStart](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html)   
-[java 8 doc](https://docs.oracle.com/javase/8/docs/api/index.html)  
-[[10분 테코톡] 깃짱, 이리내의 람다와 스트림](https://www.youtube.com/watch?v=4ZtKiSvZNu4)
+
+###### [ChatGPT](https://chat.openai.com/)
+
+###### [자바의정석](https://cafe.naver.com/javachobostudy)
+
+###### [Lambda-QuickStart](https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html)
+
+###### [java 8 doc](https://docs.oracle.com/javase/8/docs/api/index.html)
+
+###### [[10분 테코톡] 깃짱, 이리내의 람다와 스트림](https://www.youtube.com/watch?v=4ZtKiSvZNu4)
+
 ---
 
