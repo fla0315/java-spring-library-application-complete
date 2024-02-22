@@ -61,9 +61,16 @@ public class FruitJdbcRepository {
     public FruitResponse findFruitAmountByFruitName(String fruitName) {
         //1. 조회 후 GroupBy
         //2. 쿼리에서 GroupBy
-        String sql = "select sum(price) from fruit where name = ? group by salesYn";
+        String sql = "select " +
+                "sum(select price from fruit where salesYn = '1') as salseAmount" +
+                ", sum(select price from fruit where salesYn = '0') as notSalseAmount  " +
+                "from fruit where name = ? group by salesYn";
+
         Map<String, Object> result = jdbcTemplate.queryForMap(sql,fruitName);
 
-        return FruitResponse.builder().salesAmount((Long) result.get("salesAmount")).notSalesAmount((Long) result.get("notSalesAmount")).build();
+        return FruitResponse.builder()
+                            .salesAmount((Long) result.get("salesAmount"))
+                            .notSalesAmount((Long) result.get("notSalesAmount"))
+                            .build();
     }
 }

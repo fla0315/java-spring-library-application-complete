@@ -21,6 +21,7 @@ public class Day4Service {
 
     /**
      * 과일정보를 저장한다.
+     *
      * @param fruitInfo 과일 정보
      */
     public void saveFruitInfo(FruitRequest fruitInfo) {
@@ -32,6 +33,7 @@ public class Day4Service {
 
     /**
      * 팔린 과일 정보를 업데이트 한다.
+     *
      * @param fruitInfo 팔린 과일 id
      */
     public void salesFruitById(FruitRequest fruitInfo) {
@@ -46,6 +48,7 @@ public class Day4Service {
 
     /**
      * 특정 과일 기준으로 팔린 금액, 팔리지 않는 금액을 조회한다.
+     *
      * @param fruitName 과일 이름
      * @return 금액 정보
      */
