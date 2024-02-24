@@ -1,6 +1,7 @@
 package com.group.assignmentrimi.assignment.day5.controller;
 
 import com.group.assignmentrimi.assignment.day4.dto.response.FruitResponse;
+import com.group.assignmentrimi.assignment.day5.dto.ResultDto;
 import com.group.assignmentrimi.assignment.day5.service.Day5Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,10 +17,8 @@ public class Day5Controller {
     }
 
     @GetMapping("/api/v1/dice")
-    public void diceGame(@RequestParam int dieSide, @RequestParam int rollCount) {
-        day5Service.diceGame(dieSide, rollCount);
+    public ResultDto diceGame(@RequestParam int dieSide, @RequestParam int rollCount) {
+        return day5Service.diceGame(dieSide, rollCount);
     }
-
-
 
 }
