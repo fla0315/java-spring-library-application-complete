@@ -1,13 +1,9 @@
 package com.group.assignmentrimi.assignment.day5.service;
 
 import com.group.assignmentrimi.assignment.day5.dto.ResultDto;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.OptionalInt;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 

@@ -1,6 +1,5 @@
 package com.group.assignmentrimi.assignment.day5.controller;
 
-import com.group.assignmentrimi.assignment.day4.dto.response.FruitResponse;
 import com.group.assignmentrimi.assignment.day5.dto.ResultDto;
 import com.group.assignmentrimi.assignment.day5.service.Day5Service;
 import org.springframework.web.bind.annotation.GetMapping;
