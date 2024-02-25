@@ -31,4 +31,12 @@ public class UserResponse {
     public Integer getAge() {
         return age;
     }
+
+    public UserResponse(User user) {
+        this.id = user.getId();
+        this.name = user.getName();
+        this.age = user.getAge();
+
+    }
+
 }
