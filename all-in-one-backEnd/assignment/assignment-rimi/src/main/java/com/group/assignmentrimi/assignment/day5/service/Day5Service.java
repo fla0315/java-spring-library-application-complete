@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -24,7 +25,9 @@ public class Day5Service {
         log.info("- 주어지는 숫자 하나를 받는다.");
         log.info("- 해당 숫자만큼 주사위를 던져, 각 숫자가 몇 번 나왔는지 알려준다");
 
-        //TODO : valid check 추가 필요함.
+        if (dieSide == 0 || rollCount == 0) {
+            throw new IllegalArgumentException("값을 확인하여 주세요.");
+        }
 
         //주사위 돌려서 나온 횟수
         var result = IntStream.rangeClosed(1, rollCount)
