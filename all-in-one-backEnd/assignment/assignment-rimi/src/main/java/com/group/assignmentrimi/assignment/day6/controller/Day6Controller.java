@@ -19,7 +19,7 @@ public class Day6Controller {
     private final Day6Service day6Service;
 
     public Day6Controller(Day6Service day6Service) {
-        this.day6Service = day4Service;
+        this.day6Service = day6Service;
     }
 
     @PostMapping("/api/v1/fruit")
