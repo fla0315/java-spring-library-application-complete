@@ -6,12 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class FruitResponse {
-    private Long salesAmount;
-    private Long notSalesAmount;
+    private String name;
+    private LocalDate warehousingDate;
+    private Long price;
 }

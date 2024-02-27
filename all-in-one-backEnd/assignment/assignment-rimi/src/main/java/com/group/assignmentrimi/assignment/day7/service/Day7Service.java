@@ -1,7 +1,9 @@
 package com.group.assignmentrimi.assignment.day7.service;
 
+import com.group.assignmentrimi.assignment.day7.code.Option;
 import com.group.assignmentrimi.assignment.day7.dto.request.FruitRequest;
 import com.group.assignmentrimi.assignment.day7.dto.response.FruitCountResponse;
+import com.group.assignmentrimi.assignment.day7.dto.response.FruitResponse;
 import com.group.assignmentrimi.assignment.day7.repository.fruit.FruitRepository;
 import com.group.assignmentrimi.assignment.day7.vo.FruitVo;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +13,9 @@ import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -18,6 +23,7 @@ import java.time.LocalDate;
 public class Day7Service {
 
     private final FruitRepository fruitRepository;
+
 
     public Day7Service(FruitRepository fruitRepository) {
         this.fruitRepository = fruitRepository;
@@ -31,11 +37,11 @@ public class Day7Service {
     public void saveFruitInfo(FruitRequest fruitInfo) {
 
         fruitRepository.save(FruitVo.builder()
-                                    .name(fruitInfo.getName())
-                                    .salesYn(fruitInfo.getSalesYn())
-                                    .warehousingDate(fruitInfo.getWarehousingDate())
-                                    .price(fruitInfo.getPrice())
-                                    .build());
+                .name(fruitInfo.getName())
+                .salesYn(fruitInfo.getSalesYn())
+                .warehousingDate(fruitInfo.getWarehousingDate())
+                .price(fruitInfo.getPrice())
+                .build());
     }
 
     /**
@@ -69,5 +75,26 @@ public class Day7Service {
         return FruitCountResponse.builder()
                 .count(fruitRepository.countByName(fruitName))
                 .build();
+    }
+
+    public List<FruitResponse> getFruitInfoList(String option, Long price) {
+        //ex) compare = GTE select * from fruit where price >= xxxx and salesYn = 0; GreaterThanEqual
+        //ex) compare = LTE select * from fruit where price <= xxxx and salesYn = 0; LessThanEqual
+
+        List<FruitVo> result = new ArrayList<>();
+        if (Option.GTE.getCode().equals(option)) {
+            result = fruitRepository.findAllByPriceGreaterThanEqualAndSalesYn(price, "1");
+        }
+        if (Option.LTE.getCode().equals(option)) {
+            result = fruitRepository.findAllByPriceLessThanEqualAndSalesYn(price, "1");
+        }
+
+        return result.stream()
+                .map(fruitVo -> FruitResponse.builder()
+                        .name(fruitVo.getName())
+                        .warehousingDate(fruitVo.getWarehousingDate())
+                        .price(fruitVo.getPrice())
+                        .build())
+                .toList();
     }
 }

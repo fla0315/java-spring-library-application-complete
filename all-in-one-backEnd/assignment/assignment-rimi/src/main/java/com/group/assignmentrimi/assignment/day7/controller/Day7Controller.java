@@ -3,6 +3,7 @@ package com.group.assignmentrimi.assignment.day7.controller;
 
 import com.group.assignmentrimi.assignment.day7.dto.request.FruitRequest;
 import com.group.assignmentrimi.assignment.day7.dto.response.FruitCountResponse;
+import com.group.assignmentrimi.assignment.day7.dto.response.FruitResponse;
 import com.group.assignmentrimi.assignment.day7.service.Day7Service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @Slf4j
 public class Day7Controller {
@@ -20,6 +23,11 @@ public class Day7Controller {
 
     public Day7Controller(Day7Service day7Service) {
         this.day7Service = day7Service;
+    }
+
+    @GetMapping("/api/v1/fruit/list")
+    public List<FruitResponse> getFruitInfoList(@RequestParam String option, Long price) {
+        return day7Service.getFruitInfoList(option,price);
     }
 
     @GetMapping("/api/v1/fruit/count")

@@ -11,9 +11,8 @@ import java.util.List;
 public interface FruitRepository extends JpaRepository<FruitVo ,Long> {
 
     FruitVo findByName(String name);
-
-    //List<FruitResponse> findAll(String name);
-
     Long countByName(String name);
+    List<FruitVo> findAllByPriceGreaterThanEqualAndSalesYn(Long price, String salesYn);
+    List<FruitVo> findAllByPriceLessThanEqualAndSalesYn(Long price, String salesYn);
 
 }
