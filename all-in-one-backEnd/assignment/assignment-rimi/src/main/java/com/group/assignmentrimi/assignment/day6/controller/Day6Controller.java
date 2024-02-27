@@ -22,17 +22,17 @@ public class Day6Controller {
         this.day6Service = day6Service;
     }
 
-    @PostMapping("/api/v1/fruit")
+    @PostMapping("/api/v1/day6/fruit")
     public void saveFruitInfo(@RequestBody FruitRequest fruitInfo) {
         day6Service.saveFruitInfo(fruitInfo);
     }
 
-    @PutMapping("/api/v1/fruit")
+    @PutMapping("/api/v1/day6/fruit")
     public void salesFruitById(@RequestBody FruitRequest fruitInfo) {
         day6Service.salesFruitById(fruitInfo);
     }
 
-    @GetMapping("/api/v1/fruit/stat")
+    @GetMapping("/api/v1/day6/fruit/stat")
     public FruitResponse findFruitAmountByFruitName(@RequestParam String fruitName) {
         return day6Service.findFruitAmountByFruitName(fruitName);
     }
