@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 
@@ -13,9 +14,11 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class FruitRequest {
     private Long id;
     private String name;
+    private String salesYn;
     private LocalDate warehousingDate;
     private Long price;
 }

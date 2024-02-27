@@ -14,4 +14,6 @@ public interface FruitRepository extends JpaRepository<FruitVo ,Long> {
 
     //List<FruitResponse> findAll(String name);
 
+    Long countByName(String name);
+
 }

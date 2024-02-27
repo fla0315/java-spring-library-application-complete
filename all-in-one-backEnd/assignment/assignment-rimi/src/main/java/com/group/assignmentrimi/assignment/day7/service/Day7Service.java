@@ -1,11 +1,16 @@
 package com.group.assignmentrimi.assignment.day7.service;
 
 import com.group.assignmentrimi.assignment.day7.dto.request.FruitRequest;
+import com.group.assignmentrimi.assignment.day7.dto.response.FruitCountResponse;
 import com.group.assignmentrimi.assignment.day7.repository.fruit.FruitRepository;
 import com.group.assignmentrimi.assignment.day7.vo.FruitVo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
+import org.springframework.util.StringUtils;
+
+import java.time.LocalDate;
 
 @Slf4j
 @Service
@@ -25,10 +30,12 @@ public class Day7Service {
      */
     public void saveFruitInfo(FruitRequest fruitInfo) {
 
-        fruitRepository.save(FruitVo.builder().name(fruitInfo.getName())
-                .warehousingData(fruitInfo.getWarehousingDate())
-                .price(fruitInfo.getPrice())
-                .build());
+        fruitRepository.save(FruitVo.builder()
+                                    .name(fruitInfo.getName())
+                                    .salesYn(fruitInfo.getSalesYn())
+                                    .warehousingDate(fruitInfo.getWarehousingDate())
+                                    .price(fruitInfo.getPrice())
+                                    .build());
     }
 
     /**
@@ -44,8 +51,23 @@ public class Day7Service {
         var fruit = fruitRepository.findById(fruitInfo.getId())
                 .orElseThrow(IllegalArgumentException::new);
 
-        fruitRepository.save(FruitVo.builder().id(fruit.getId()).salesYn("1").build());
+        fruitRepository.save(FruitVo.builder()
+                .name(fruit.getName())
+                .price(fruit.getPrice())
+                .warehousingDate(LocalDate.now())
+                .id(fruit.getId())
+                .salesYn("1")
+                .build());
 
     }
 
+    public FruitCountResponse countFruitInfo(String fruitName) {
+        if (ObjectUtils.isEmpty(fruitName)) {
+            throw new IllegalArgumentException("fruitName is null");
+        }
+
+        return FruitCountResponse.builder()
+                .count(fruitRepository.countByName(fruitName))
+                .build();
+    }
 }
