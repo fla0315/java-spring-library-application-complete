@@ -1,9 +1,7 @@
 package com.group.libraryapprimi.dto.user.loanhistory;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.group.libraryapprimi.domain.user.User;
+import jakarta.persistence.*;
 
 @Entity
 public class UserLoanHistory {
@@ -12,7 +10,11 @@ public class UserLoanHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id = null;
 
-    private long userId;
+    //private long userId; -> 더 나은 객체지향을 위해 User user로 변경
+
+    //N:1 관계 ex) 학생 N : 교실 1ㄴ
+    @ManyToOne //내가 다수 이고 너가 하나일 때 사용하는 어노테이션
+    private User user;
 
     private String bookName;
 
@@ -22,8 +24,8 @@ public class UserLoanHistory {
 
     }
 
-    public UserLoanHistory(long userId, String bookName) {
-        this.userId = userId;
+    public UserLoanHistory(User user, String bookName) {
+        this.user = user;
         this.bookName = bookName;
         this.isReturn = false;
     }
