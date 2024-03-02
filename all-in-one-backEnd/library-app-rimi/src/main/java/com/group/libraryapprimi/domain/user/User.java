@@ -24,7 +24,7 @@ public class User {
 
     //mappedBy = "user" 를 통해서 연관관계 주인을 설정해줘야함
     // ?? foreign-key를 가진 쪽이 연관관계의 주인이다? 라고 이해하면 되는지 확인
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserLoanHistory> userLoanHistory = new ArrayList<>();
 
     //JPA 사용을 위한 기본 생성자
