@@ -6,6 +6,7 @@ import com.group.libraryapprimi.domain.user.User;
 import com.group.libraryapprimi.domain.user.UserRepository;
 import com.group.libraryapprimi.dto.book.request.BookCreatRequest;
 import com.group.libraryapprimi.dto.book.request.BookLoanRequest;
+import com.group.libraryapprimi.dto.book.request.BookReturnRequest;
 import com.group.libraryapprimi.dto.user.loanhistory.UserLoanHistory;
 import com.group.libraryapprimi.dto.user.loanhistory.UserLoanHistoryRepository;
 import org.springframework.stereotype.Service;
@@ -53,5 +54,26 @@ public class BookService {
 
     }
 
+    @Transactional
+    public void returnBook(BookReturnRequest request) {
+
+        //1. 유저 정보를 get
+        User user = userRepository.findByName(request.getUserName())
+                                  .orElseThrow(IllegalAccessError::new);
+
+        UserLoanHistory userLoanHistory = userLoanHistoryRepository.findByUserIdAndBookName(user.getId(),
+                                                                                            request.getBookName())
+                                                                   .orElseThrow(IllegalArgumentException::new);
+
+        userLoanHistory.doReturn();
+
+        // @Transactional을 사용하기 때문에 영속성으로 인해
+        // save 처리를 해주지 않아도 변경을 감지하고 수정한다.
+
+//        userLoanHistoryRepository.save(new UserLoanHistory(userLoanHistory.getUserId(),
+//                                                           userLoanHistory.getBookName(),
+//                                                           userLoanHistory.doReturn()));
+
+    }
 
 }
