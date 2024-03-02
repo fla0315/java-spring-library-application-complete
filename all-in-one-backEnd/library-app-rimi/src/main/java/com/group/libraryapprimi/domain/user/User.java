@@ -40,8 +40,21 @@ public class User {
         this.age = age;
     }
 
-    public void updateName(String name){
+    public void updateName(String name) {
         this.name = name;
+    }
+
+    //domain 계층에 비즈니스 로직 추가
+    public void loanBook(String bookName) {
+        this.userLoanHistory.add(new UserLoanHistory(this, bookName));
+    }
+
+    public void returnBook(String bookName) {
+        UserLoanHistory targetHistory = this.userLoanHistory.stream()
+                                                            .filter(history -> history.getBookName().equals(bookName))
+                                                            .findFirst()
+                                                            .orElseThrow();
+        targetHistory.doReturn();
     }
 
 
