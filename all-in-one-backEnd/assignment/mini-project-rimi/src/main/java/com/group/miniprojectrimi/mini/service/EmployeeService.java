@@ -1,8 +1,8 @@
 package com.group.miniprojectrimi.mini.service;
 
 import com.group.miniprojectrimi.mini.code.RoleCode;
-import com.group.miniprojectrimi.mini.domain.Employee;
-import com.group.miniprojectrimi.mini.domain.EmployeeRepository;
+import com.group.miniprojectrimi.mini.domain.employee.Employee;
+import com.group.miniprojectrimi.mini.domain.employee.EmployeeRepository;
 import com.group.miniprojectrimi.mini.dto.request.EmployeeRequest;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

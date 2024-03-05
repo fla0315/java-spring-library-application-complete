@@ -1,4 +1,4 @@
-package com.group.miniprojectrimi.mini.domain;
+package com.group.miniprojectrimi.mini.domain.employee;
 
 import jakarta.persistence.*;
 import lombok.*;
