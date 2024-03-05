@@ -2,14 +2,25 @@ package com.group.miniprojectrimi.mini.controller;
 
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
 public class CommuteProgramController {
 
+
+    //직원 등록
+    @PostMapping("/employee/save")
+    public saveEmployeeInfo (@RequestBody ()) {
+
+    }
+
     //1. 팀 테이블
     //2. 직원 테이블
+
 
 
     //1. 팀 등록 기능 -> 회사에 있는 팀을 등록할 수 있어야합니다. 팀이 가져야하는 정보는 다음과 같습니다. (팀 이름)
