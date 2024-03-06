@@ -1,6 +1,7 @@
 package com.group.libraryapprimi.domain.book;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 @Entity
 public class Book {
@@ -11,12 +12,9 @@ public class Book {
     protected Book() {
     }
 
+    @Getter
     @Column(nullable = false)
     private String name;
-
-    public String getName() {
-        return name;
-    }
 
     public Book(String name) {
         if (name == null || name.isBlank()) {
