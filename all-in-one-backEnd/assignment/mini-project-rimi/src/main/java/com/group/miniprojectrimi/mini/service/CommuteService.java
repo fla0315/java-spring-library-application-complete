@@ -31,14 +31,15 @@ public class CommuteService {
         //5. 다시 출근을 하는 경우 이력이 쌓이며 다시 출근 기록을 활성화한다.
         //6. 근무시간은 9 to 6를 기준으로 하며 근무시간 단위는 분당으로 계산한다.
 
-        Employee employeeInfo
-                = employeeRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+        Employee employeeInfo = employeeRepository.findById(id)
+                                                  .orElseThrow(() -> new IllegalArgumentException("직원이 존재하지 않습니다."));
 
-        var commute = commuteRepository.findById(id).orElseThrow(IllegalArgumentException::new);
 
-        log.debug("날짜 비교 = {}", commute.getCommuteDate().compareTo(LocalDate.now()));
+        var commute = commuteRepository.findB
+
+
+
         AtomicLong commuteSeq = new AtomicLong();
-
         commuteRepository.save(Commute.builder()
                                       .employeeId(employeeInfo.getId())
                                       .commuteSeq(3)
