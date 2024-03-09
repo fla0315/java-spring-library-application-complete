@@ -35,7 +35,8 @@ public class CommuteService {
                                                   .orElseThrow(() -> new IllegalArgumentException("직원이 존재하지 않습니다."));
 
 
-        var commute = commuteRepository.findB
+        //1.version 1 mybatis로 하고 todo : jpa로 변환
+        //var commute = commuteRepository.findB
 
 
 
