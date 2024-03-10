@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.concurrent.atomic.AtomicLong;
 
 @Slf4j
 @Service
@@ -37,18 +36,13 @@ public class CommuteService {
 
         //1.version 1 mybatis로 하고 todo : jpa로 변환
         //var commute = commuteRepository.findB
+        //AtomicLong commuteSeq = new AtomicLong();
 
-
-
-        AtomicLong commuteSeq = new AtomicLong();
         commuteRepository.save(Commute.builder()
                                       .employeeId(employeeInfo.getId())
                                       .commuteSeq(3)
                                       .commuteYn(true)
                                       .commuteDate(LocalDate.now())
                                       .build());
-
-
     }
-
 }
